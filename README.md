@@ -28,4 +28,4 @@ B.E. Electronics and Communication Engineering, Saveetha School of Engineering
 Chennai, Tamil Nadu, India
 
 ## Connect
-📫 Sanmugappriyan.ee@gmail.com | [LinkedIn](your-linkedin-link)
+📫 Sanmugappriyan.ee@gmail.com | [LinkedIn](www.linkedin.com/in/sanmugappriyan-s)

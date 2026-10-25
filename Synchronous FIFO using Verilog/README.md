@@ -1,59 +1,85 @@
+# Synchronous FIFO Design Using Verilog HDL
 
-# Synchronous FIFO Design using Verilog HDL
-
-A digital design project to implement and verify a synchronous First-In, First-Out (FIFO) buffer using Verilog HDL. This project is being developed step by step as part of my RTL design learning journey.
+A digital design project to implement and verify a synchronous First-In, First-Out (FIFO) buffer using Verilog HDL. This project is part of my RTL design learning journey, focusing on sequential logic, memory management, pointer control, and functional verification.
 
 ## Project Status
 
-🚧 In Progress
+🚧 **In Progress**
 
-## Objectives
+## Overview
 
-- Understand FIFO architecture and data flow.
-- Implement memory storage using a Verilog memory array.
-- Design read and write pointers.
-- Implement full and empty status flags.
-- Handle read/write control and boundary conditions.
-- Verify functionality through simulation and a testbench.
+A synchronous FIFO is a memory buffer in which data is read in the same order it was written (First-In, First-Out). Read and write operations are synchronized to a common clock.
+
+The objective of this project is to design a parameterized FIFO, implement its control logic, and verify its functionality through simulation using Icarus Verilog.
 
 ## Design Specifications
 
-| Parameter | Description |
+| Parameter | Specification |
 |---|---|
-| HDL | Verilog HDL |
+| Hardware Description Language | Verilog HDL |
 | Architecture | Synchronous FIFO |
-| Clocking | Single clock domain |
-| Storage | Configurable depth and data width (planned) |
-| Simulation | Icarus Verilog |
+| Clock | Single clock domain |
+| Data Width | 8 bits (planned) |
+| FIFO Depth | 16 entries (planned) |
+| Reset | Synchronous, active-high (planned) |
+| Simulation Tool | Icarus Verilog |
 | Waveform Viewer | GTKWave (optional) |
 
-## Planned Architecture
+*Specifications may be refined during development.*
 
-- Input data interface
-- Write enable and read enable
-- Clock and reset
-- FIFO memory array
-- Read and write pointers
-- Full and empty flags
-- Data output interface
+## Key Features
+
+- Memory storage using a Verilog register array
+- Read and write pointer management
+- Full and empty status flag generation
+- Synchronous read and write control
+- FIFO ordering and data integrity checks
+- Pointer wraparound handling
+- Boundary and corner-case verification
+
+## Block Diagram
+
+```text
+                Synchronous FIFO
+        +-------------------------------+
+ clk -->|                               |
+ rst -->|         Control Logic         |
+ wr_en->|                               |
+ rd_en->|   +-----------------------+   |
+ data ->|-->|      FIFO Memory      |   |
+        |   +-----------------------+   |
+        |     ^                 ^       |
+        |  Write Pointer     Read Pointer
+        |                               |
+        |  Full Flag    Empty Flag      |
+        |                               |
+        |<---------------------- data_out
+        +-------------------------------+
+```
 
 ## Verification Plan
 
+The FIFO will be tested using a Verilog testbench.
+
 - [ ] Reset behavior
-- [ ] Write and read operations
+- [ ] Basic write operation
+- [ ] Basic read operation
 - [ ] FIFO ordering (first in, first out)
-- [ ] Empty FIFO behavior
-- [ ] Full FIFO behavior
+- [ ] Empty FIFO handling
+- [ ] Full FIFO handling
 - [ ] Simultaneous read and write
 - [ ] Pointer wraparound
-- [ ] Boundary and corner-case testing
+- [ ] Boundary and corner cases
 
-## Tools
+Verification results will be documented after the simulations are completed.
 
-- Verilog HDL
-- Icarus Verilog
-- GTKWave (optional)
-- Visual Studio Code
+## Tools and Technologies
+
+- **Verilog HDL** — RTL implementation
+- **Icarus Verilog** — compilation and simulation
+- **GTKWave** — waveform inspection (optional)
+- **Visual Studio Code** — development environment
+- **Git and GitHub** — version control and project documentation
 
 ## Repository Structure
 
@@ -68,30 +94,38 @@ sync-fifo-verilog/
 └── README.md
 ```
 
-*The structure above is planned and may change as development progresses.*
+*The repository structure is planned and may evolve during development.*
 
-## Development Progress
+## Development Roadmap
 
-- [ ] Define FIFO specifications
-- [ ] Design the block diagram
-- [ ] Implement memory and write logic
+- [ ] Define FIFO architecture and specifications
+- [ ] Implement FIFO memory and write logic
 - [ ] Implement read logic
-- [ ] Implement full and empty flags
-- [ ] Create the testbench
-- [ ] Run simulation and inspect waveforms
-- [ ] Test corner cases
-- [ ] Document final results
+- [ ] Design full and empty flag logic
+- [ ] Develop the testbench
+- [ ] Compile and run simulations
+- [ ] Inspect waveforms and debug failures
+- [ ] Verify corner cases
+- [ ] Document simulation results
 
 ## Learning Outcomes
 
-This project aims to develop practical skills in RTL design, sequential logic, pointer management, control logic, simulation, and digital verification.
+Through this project, I aim to strengthen my understanding of:
+
+- RTL design using Verilog HDL
+- Sequential logic and clocked processes
+- Memory arrays and pointer arithmetic
+- FIFO control logic and status flags
+- Testbench development and simulation
+- Functional verification and debugging
 
 ## Author
 
-**Your Name**
+**Sanmugappriyan S**
 
 GitHub: [Your GitHub Profile](https://github.com/)
 
----
+## Project Note
 
-*This project is currently under development. Features and verification results will be updated as implementation progresses.*
+This project is currently under development. RTL implementation, simulation results, and verification evidence will be added as development progresses.
+

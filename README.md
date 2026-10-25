@@ -26,7 +26,7 @@ Designing and verifying a synchronous FIFO buffer using Verilog HDL.
 - Clocked sequential logic
 - Testbench development and corner-case verification
 
-🔗 [View Project](https://github.com/ssanmugappriyan/sync-fifo-verilog)
+🔗 [View Project](https://github.com/ssanmugappriyan/Sanmugappriyan/tree/main/Synchronous%20FIFO%20Design%20Using%20Verilog%20HDL)
 
 ### 2. UART Transmitter and Receiver using Verilog HDL 📋
 **Status: Planned**

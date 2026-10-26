@@ -38,24 +38,7 @@ The objective of this project is to design a parameterized FIFO, implement its c
 - Boundary and corner-case verification
 
 ## Block Diagram
-
-```text
-                Synchronous FIFO
-        +-------------------------------+
- clk -->|                               |
- rst -->|         Control Logic         |
- wr_en->|                               |
- rd_en->|   +-----------------------+   |
- data ->|-->|      FIFO Memory      |   |
-        |   +-----------------------+   |
-        |     ^                 ^       |
-        |  Write Pointer     Read Pointer
-        |                               |
-        |  Full Flag    Empty Flag      |
-        |                               |
-        |<---------------------- data_out
-        +-------------------------------+
-```
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/7e46a95c-d7a7-4dda-96bb-4e015ae7dea2" />
 
 ## Verification Plan
 

@@ -1,114 +1,219 @@
 # Synchronous FIFO Design Using Verilog HDL
 
-A digital design project to implement and verify a synchronous First-In, First-Out (FIFO) buffer using Verilog HDL. This project is part of my RTL design learning journey, focusing on sequential logic, memory management, pointer control, and functional verification.
+A synchronous First-In, First-Out (FIFO) design implemented using Verilog HDL. This project demonstrates fundamental RTL design concepts, including sequential logic, memory management, pointer control, status flag generation, and functional verification.
+
+The project is developed as part of my journey toward becoming an RTL Design / ASIC Design Engineer.
 
 ## Project Status
 
 🚧 **In Progress**
 
-## Overview
+- Basic FIFO RTL implementation completed.
+- Single write and read simulation successfully verified.
+- Extended verification and corner-case testing are in progress.
 
-A synchronous FIFO is a memory buffer in which data is read in the same order it was written (First-In, First-Out). Read and write operations are synchronized to a common clock.
+## 1. Overview
 
-The objective of this project is to design a parameterized FIFO, implement its control logic, and verify its functionality through simulation using Icarus Verilog.
+A FIFO (First-In, First-Out) is a memory structure in which the first data written is the first data read.
 
-## Design Specifications
+A synchronous FIFO performs read and write operations using a common clock signal. It is commonly used in digital systems for temporary data storage, buffering, and communication between hardware modules.
+
+The objective of this project is to design a synchronous FIFO using Verilog HDL and verify its functionality through simulation.
+
+## 2. Design Specifications
 
 | Parameter | Specification |
 |---|---|
-| Hardware Description Language | Verilog HDL |
-| Architecture | Synchronous FIFO |
-| Clock | Single clock domain |
-| Data Width | 8 bits (planned) |
-| FIFO Depth | 16 entries (planned) |
-| Reset | Synchronous, active-high (planned) |
-| Simulation Tool | Icarus Verilog |
-| Waveform Viewer | GTKWave (optional) |
+| Design | Synchronous FIFO |
+| HDL | Verilog |
+| Data Width | 8 bits |
+| FIFO Depth | 16 entries |
+| Storage Capacity | 128 bits |
+| Clock | Single clock |
+| Reset | Synchronous, active-high |
+| Read Operation | Clock-synchronized |
+| Write Operation | Clock-synchronized |
+| Simulation | Icarus Verilog |
+| Waveform Viewer | GTKWave |
 
-*Specifications may be refined during development.*
+## 3. FIFO Architecture
 
-## Key Features
+The FIFO consists of the following main components:
 
-- Memory storage using a Verilog register array
-- Read and write pointer management
-- Full and empty status flag generation
-- Synchronous read and write control
-- FIFO ordering and data integrity checks
-- Pointer wraparound handling
-- Boundary and corner-case verification
+- **Memory Array:** Stores the input data.
+- **Write Pointer:** Tracks the location where the next data will be written.
+- **Read Pointer:** Tracks the location from which the next data will be read.
+- **Occupancy Counter:** Tracks the number of stored entries.
+- **Full Flag:** Indicates when all 16 FIFO entries are occupied.
+- **Empty Flag:** Indicates when the FIFO contains no data.
 
-## Block Diagram
-<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/7e46a95c-d7a7-4dda-96bb-4e015ae7dea2" />
+### Block Diagram
+<img width="1672" height="941" alt="Block Diagram" src="https://github.com/user-attachments/assets/e0419e43-55c8-4981-afff-ee39dea0fee9" />
 
-## Verification Plan
 
-The FIFO will be tested using a Verilog testbench.
+## 4. Key Features
 
-- [ ] Reset behavior
-- [ ] Basic write operation
-- [ ] Basic read operation
-- [ ] FIFO ordering (first in, first out)
-- [ ] Empty FIFO handling
-- [ ] Full FIFO handling
-- [ ] Simultaneous read and write
-- [ ] Pointer wraparound
-- [ ] Boundary and corner cases
+- 8-bit data storage.
+- 16-entry FIFO memory.
+- Independent read and write pointers.
+- Synchronous reset functionality.
+- Full and empty flag generation.
+- Occupancy tracking using a counter.
+- FIFO data ordering.
+- Pointer wraparound through 4-bit pointer arithmetic.
 
-Verification results will be documented after the simulations are completed.
-
-## Tools and Technologies
-
-- **Verilog HDL** — RTL implementation
-- **Icarus Verilog** — compilation and simulation
-- **GTKWave** — waveform inspection (optional)
-- **Visual Studio Code** — development environment
-- **Git and GitHub** — version control and project documentation
-
-## Repository Structure
+## 5. Repository Structure
 
 ```text
-sync-fifo-verilog/
+Synchronous FIFO Design/
+│
 ├── rtl/
 │   └── sync_fifo.v
+│
 ├── tb/
 │   └── tb_sync_fifo.v
+│
 ├── sim/
-├── waveforms/
+│   └── test1.png
+│
 └── README.md
 ```
 
-*The repository structure is planned and may evolve during development.*
+## 6. Simulation and Verification
 
-## Development Roadmap
+The design is simulated using **Icarus Verilog**. GTKWave is used to inspect signal transitions and verify the behavior of the FIFO.
 
-- [ ] Define FIFO architecture and specifications
-- [ ] Implement FIFO memory and write logic
-- [ ] Implement read logic
-- [ ] Design full and empty flag logic
-- [ ] Develop the testbench
-- [ ] Compile and run simulations
-- [ ] Inspect waveforms and debug failures
-- [ ] Verify corner cases
-- [ ] Document simulation results
+### Test 1 — Single Write and Read
 
-## Learning Outcomes
+**Test Objective:** Verify that data written into the FIFO can be read back correctly.
 
-Through this project, I aim to strengthen my understanding of:
+Test sequence:
 
-- RTL design using Verilog HDL
-- Sequential logic and clocked processes
-- Memory arrays and pointer arithmetic
-- FIFO control logic and status flags
-- Testbench development and simulation
-- Functional verification and debugging
+1. Apply synchronous reset.
+2. Write `8'hA5` into the FIFO.
+3. Disable the write operation.
+4. Enable the read operation.
+5. Check the output data.
+6. Verify the empty flag after the read.
 
-## Author
+**Expected Output:** `8'hA5`
+
+**Simulation Result:** PASS
+
+- Data was written successfully.
+- The expected data was received during the read operation.
+- The FIFO empty flag was asserted after the read.
+
+### Test 1 — Simulation Waveform
+
+![Test 1 - Single Write and Read](sim/test1.png)
+
+### Verification Progress
+
+| Test Case | Status |
+|---|---|
+| Synchronous reset | Completed |
+| Single write operation | PASS |
+| Single read operation | PASS |
+| Output data verification | PASS |
+| Empty flag verification | PASS |
+| Multiple write/read operations | Pending |
+| FIFO ordering | Pending |
+| Full FIFO condition | Pending |
+| Write while full | Pending |
+| Read while empty | Pending |
+| Simultaneous read/write | Pending |
+| Pointer wraparound | Pending |
+| Reset during operation | Pending |
+
+## 7. Running the Simulation
+
+### Prerequisites
+
+- Icarus Verilog
+- GTKWave (optional, for waveform visualization)
+
+### Compile the RTL and Testbench
+
+Open the terminal in the project directory and run:
+
+```bash
+iverilog -g2012 -o fifo_sim rtl/sync_fifo.v tb/tb_sync_fifo.v
+```
+
+### Run the Simulation
+
+```bash
+vvp fifo_sim
+```
+
+### View the Waveform
+
+If waveform dumping is enabled in the testbench:
+
+```bash
+gtkwave sync_fifo.vcd
+```
+
+## 8. Tools and Technologies
+
+| Tool | Purpose |
+|---|---|
+| Verilog HDL | RTL design |
+| Icarus Verilog | Compilation and simulation |
+| GTKWave | Waveform analysis |
+| Visual Studio Code | Code development |
+| Git | Version control |
+| GitHub | Project hosting and documentation |
+
+## 9. Development Roadmap
+
+- [x] Define FIFO architecture and specifications
+- [x] Implement memory array
+- [x] Implement write pointer and write logic
+- [x] Implement read pointer and read logic
+- [x] Implement full and empty flags
+- [x] Implement occupancy counter
+- [x] Develop basic testbench
+- [x] Verify single write and read operation
+- [ ] Verify multiple data transactions
+- [ ] Test FIFO full and empty conditions
+- [ ] Verify simultaneous read and write
+- [ ] Test pointer wraparound
+- [ ] Perform corner-case verification
+- [ ] Inspect and document additional waveforms
+- [ ] Perform synthesis checks
+
+## 10. Learning Outcomes
+
+This project helps develop practical understanding of:
+
+- RTL design using Verilog HDL.
+- Combinational and sequential logic.
+- Clocked processes and non-blocking assignments.
+- Memory arrays and pointer arithmetic.
+- FIFO architecture and control logic.
+- Status flag generation.
+- Testbench development.
+- Simulation-based functional verification.
+- Debugging using waveform analysis.
+
+## 11. Future Improvements
+
+- Develop a more comprehensive self-checking testbench.
+- Add a scoreboard for automated data-order verification.
+- Verify all FIFO boundary conditions.
+- Explore parameterized FIFO architecture.
+- Perform synthesis and inspect hardware resource utilization.
+
+## 12. Author
 
 **Sanmugappriyan S**
 
-GitHub: [Your GitHub Profile](https://github.com/)
+Electronics and Communication Engineering
 
-## Project Note
+GitHub: [ssanmugappriyan](https://github.com/ssanmugappriyan/Sanmugappriyan)
 
-This project is currently under development. RTL implementation, simulation results, and verification evidence will be added as development progresses.
+---
 
+*This project is part of my continuous learning in RTL design, digital systems, and ASIC design. Further implementation and verification results will be documented as development progresses.*

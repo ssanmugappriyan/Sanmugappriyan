@@ -10,6 +10,7 @@ module tb_sync_fifo;
     wire full;
     wire empty;
 
+   integer i;
     sync_fifo uut(
         .clk(clk),
         .rst(rst),
@@ -29,6 +30,7 @@ module tb_sync_fifo;
 
     initial
     begin
+        // reset test
        rst = 1;
        wr_en = 0;
        rd_en = 0;
@@ -38,7 +40,8 @@ module tb_sync_fifo;
        rst = 0;
        #10;
 
-       wr_en = 1; // write
+       //single write and read test
+       wr_en = 1; 
        data_in = 8'hA5;
        #10;
 
@@ -70,8 +73,62 @@ module tb_sync_fifo;
        begin
         $display("Fail: FIFO should be Empty");
        end
-      
+
+       //multiple write and read test
+       for (i = 0; i < 16; i = i + 1)
+       begin
+        @(negedge clk);
+        wr_en= 1;
+        data_in = i;
+       end
+
+       @(negedge clk);
+       wr_en = 0;
+
+       //full flag test
+       if(full == 1'b1)
+       begin
+        $display("Pass: Full Flag");
+       end
+       else 
+       begin
+        $display("Fail: Error on Full Flag");
+       end
+
+       //Multiple read test
+       rd_en = 1;
+       for(i = 0; i < 16; i = i + 1)
+       begin
+         @(negedge clk);
+         @(posedge clk);
+         #1;
+
+         if (data_out == i)
+         begin
+            $display("Pass: Multiple Read");
+         end
+         else
+         begin
+            $display("Fail: Multiple Read");
+         end
+       end
+
+       @(negedge clk);
+       rd_en = 0;
+
+       //empty flag test
+       if(empty == 1'b1)
+       begin
+        $display("Pass: Empty Flag");
+       end
+       else 
+       begin
+        $display("Fail: Error on Empty Flag");
+       end
+
+
     $finish;
+
     end
     initial 
     begin

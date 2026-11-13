@@ -1,88 +1,145 @@
+# Smart Kinesio Tape with Motion Sensors and LED Feedback for Real-Time Knee Monitoring
 
-# Hi, I'm Sanmugappriyan 👋
+A wearable knee-motion monitoring prototype that combines **Kinesio tape with a reusable ESP32-C3 sensor module** to track knee flexion and extension in real time. The system uses an **MPU6050 IMU** for motion sensing and provides immediate feedback through LEDs.
 
-ECE graduate (Class of 2026) from Saveetha School of Engineering, aspiring to build a career in **VLSI Design and Design Verification**.
+## Overview
 
-I'm developing my skills in digital design, RTL coding, functional verification, and hardware prototyping through hands-on projects using Verilog HDL and simulation tools.
+The project is designed to provide a lightweight and wearable approach to knee-motion monitoring.
 
-## Skills
+The electronic module can be attached to the Kinesio tape using Velcro, allowing the electronics to be reused while the tape can be replaced.
 
-- **HDL:** Verilog, VHDL
-- **Simulation:** ModelSim, Icarus Verilog
-- **Digital Design:** RTL design, FSMs, FIFOs, UART, SPI
-- **Verification:** Testbenches, waveform analysis, corner-case testing
-- **Hardware:** STM32, ESP32
-- **Tools:** Git, GitHub, VS Code
+## Features
 
-## Featured Projects
+* Real-time knee flexion and extension monitoring
+* MPU6050-based motion sensing
+* ESP32-C3 microcontroller
+* LED-based movement feedback
+* Reusable electronic module
+* Kinesio tape-based wearable design
+* Real-time motion data processing
+* Wi-Fi-based data visualization
+* Lightweight and portable prototype
 
-### 1. Synchronous FIFO using Verilog HDL 🚧
-**Status: In Progress**
+## Hardware Components
 
-Designing and verifying a synchronous FIFO buffer using Verilog HDL.
+| Component           | Purpose                                        |
+| ------------------- | ---------------------------------------------- |
+| **ESP32-C3**        | Main microcontroller and processing unit       |
+| **MPU6050**         | Accelerometer and gyroscope for motion sensing |
+| **Li-Po Battery**   | Portable power supply                          |
+| **Charging Module** | Battery charging                               |
+| **LEDs**            | Visual feedback                                |
+| **Kinesio Tape**    | Wearable mounting platform                     |
+| **Velcro**          | Attaches the reusable electronic module        |
 
-- Memory array and read/write pointers
-- Full and empty flag generation
-- Clocked sequential logic
-- Testbench development and corner-case verification
+The project documentation identifies the ESP32-C3, MPU6050, Li-Po battery and charging module among the main prototype components.
 
-🔗 [View Project](https://github.com/ssanmugappriyan/Sanmugappriyan/tree/main/Synchronous%20FIFO%20Design%20Using%20Verilog%20HDL)
+## System Workflow
 
-### 2. UART Transmitter and Receiver using Verilog HDL 📋
-**Status: Planned**
+```text
+        Knee Movement
+              │
+              ▼
+         ┌──────────┐
+         │ MPU6050  │
+         │   IMU    │
+         └────┬─────┘
+              │
+              │ I²C
+              ▼
+        ┌───────────┐
+        │ ESP32-C3  │
+        │ Processing│
+        └─────┬─────┘
+              │
+        ┌─────┴─────┐
+        │           │
+        ▼           ▼
+     LED Feedback   Wi-Fi
+                    │
+                    ▼
+              Web Dashboard
+```
 
-Building a UART communication module to explore serial communication and RTL control logic.
+## Software
 
-- Finite-state machines (FSMs)
-- Baud-rate timing and clock-cycle control
-- Serial shift registers
-- Start, data, and stop bit handling
-- Transmitter/receiver loopback verification
+* Arduino IDE
+* C/C++
+* ESP32-C3
+* MPU6050
+* I²C communication
+* Wi-Fi
+* Web interface
 
-🔗 Repository link will be added when created.
+## Pin Configuration
 
-### 3. SPI Master Controller using Verilog HDL 📋
-**Status: Planned**
+| Component   | ESP32-C3 Pin |
+| ----------- | ------------ |
+| MPU6050 SDA | GPIO 4       |
+| MPU6050 SCL | GPIO 5       |
+| VCC         | 3.3 V        |
+| GND         | GND          |
 
-Developing an SPI master controller to understand synchronous serial interfaces and timing-sensitive digital design.
+> Refer to the firmware for the complete and current pin configuration.
 
-- SPI clock generation
-- MOSI and MISO data transfer
-- Shift registers and control FSM
-- SPI modes (CPOL and CPHA)
-- Timing and functional verification
+## Getting Started
 
-🔗 Repository link will be added when created.
+### Requirements
 
-## Currently Learning
+* ESP32-C3 development board
+* MPU6050 module
+* Arduino IDE
+* Required supporting components
+* USB cable
 
-- Verilog RTL design and simulation
-- Digital design fundamentals and sequential logic
-- Self-checking testbench development
-- Functional debugging using simulation waveforms
+### Uploading the Firmware
 
-## Learning Roadmap
+1. Install the Arduino IDE.
+2. Install ESP32 board support.
+3. Connect the ESP32-C3 to your computer.
+4. Open the firmware:
 
-- Asynchronous FIFO design and clock domain crossing (CDC)
-- Gray-code pointers and synchronizers
-- SystemVerilog and assertions (SVA)
-- Universal Verification Methodology (UVM)
-- RTL synthesis and FPGA implementation
-- OpenLane and RTL-to-GDSII design flow
+```text
+firmware/smart_knee_monitor.ino
+```
 
-## Education
+5. Select the appropriate ESP32-C3 board.
+6. Select the correct COM port.
+7. Compile and upload the firmware.
+8. Power the device and connect the sensor module.
 
-**B.E. Electronics and Communication Engineering**
+## Repository Structure
 
-Saveetha School of Engineering  
-Chennai, Tamil Nadu, India  
-Class of 2026
+```text
+smart-kinesio-tape/
+│
+├── README.md
+│
+└── firmware/
+    └── smart_knee_monitor.ino
+```
 
-## Connect with Me
+## Future Improvements
 
-- 📧 Email: [Sanmugappriyan.ee@gmail.com](mailto:Sanmugappriyan.ee@gmail.com)
-- 💼 LinkedIn: [Sanmugappriyan S](https://www.linkedin.com/in/sanmugappriyan-s/)
+* Improve motion-angle accuracy and calibration
+* Develop a custom PCB
+* Further reduce the module size
+* Improve battery management
+* Add long-term data logging
+* Improve the web interface
+* Develop mobile application support
+* Perform additional validation with different movement patterns
 
----
+The project documentation also identifies improved motion-analysis algorithms, PCB miniaturization, mobile visualization and broader validation as potential future developments.
 
-*Actively building and documenting hands-on digital design projects as I prepare for entry-level VLSI RTL Design and Design Verification opportunities.*
+## Disclaimer
+
+This project is a **student-developed prototype for educational and experimental purposes**. It is not intended to be used as a medical diagnostic or clinical device.
+
+## Author
+
+**Sanmugappriyan S**
+
+B.E. Electronics and Communication Engineering
+
+Interested in **Digital Electronics, Embedded Systems, VLSI, RTL Design and Hardware Development**.

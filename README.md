@@ -15,8 +15,8 @@
     <strong>🌐 Visit My Portfolio</strong>
   </a>
   &nbsp; | &nbsp;
-  <a href="https://github.com/ssanmugappriyan/Sanmugappriyan">
-    <strong>💻 GitHub Profile</strong>
+  <a href="https://www.linkedin.com/in/sanmugappriyan-s/">
+    <strong>💻 LinkedIn Profile</strong>
   </a>
 </p>
 

@@ -11,11 +11,11 @@
 </p>
 
 <p align="center">
-  <a href="[https://ssanmugappriyan.github.io/Sanmugappriyan/]">
+  <a href="https://ssanmugappriyan.github.io/Sanmugappriyan/">
     <strong>🌐 Visit My Portfolio</strong>
   </a>
   &nbsp; | &nbsp;
-  <a href="https://github.com/ssanmugappriyan">
+  <a href="https://github.com/ssanmugappriyan/Sanmugappriyan">
     <strong>💻 GitHub Profile</strong>
   </a>
 </p>

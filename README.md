@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="[https://ssanmugappriyan.github.io/Sanmugapppriyan/](https://ssanmugappriyan.github.io/Sanmugappriyan/)">
+  <a href="[https://ssanmugappriyan.github.io/Sanmugappriyan/]">
     <strong>🌐 Visit My Portfolio</strong>
   </a>
   &nbsp; | &nbsp;

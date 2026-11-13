@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Sanmugappriyan S — RTL design and embedded systems engineer working across Verilog, VHDL, STM32, and ESP32."
+    />
+    <meta name="theme-color" content="#060d09" />
+    <title>Sanmugappriyan S — RTL & Embedded Systems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Sanmugappriyan home">
+        <span class="brand-mark" aria-hidden="true">S<span>.</span></span>
+        <span class="brand-name">SANMUGAPPRIYAN <span>S</span></span>
+      </a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a class="active" href="#top" aria-current="page">Home</a>
+        <a href="#work">Projects</a>
+        <a href="#about">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero section-wrap" id="top">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="pulse-dot"></span> ELECTRONICS &amp; COMMUNICATION ENGINEERING <span class="eyebrow-divider">/</span> CHENNAI, INDIA</div>
+          <h1>Hi, I’m<br />Sanmugappriyan <span>S</span></h1>
+          <p class="hero-intro">
+            Aspiring RTL design engineer <span class="intro-separator">|</span> Embedded systems enthusiast.<br />
+            Building real-world projects, one line of code at a time.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">View my projects <span aria-hidden="true">→</span></a>
+            <a class="button button-outline" href="Sanmugappriyan_S_Resume.pdf" target="_blank" rel="noreferrer">
+              <span class="download-icon" aria-hidden="true">↓</span> Download résumé
+            </a>
+          </div>
+          <div class="hero-skills" aria-label="Engineering focus areas">
+            <div class="hero-skill">
+              <span class="skill-icon" aria-hidden="true">▦</span>
+              <strong>RTL Design</strong>
+              <span>Verilog / VHDL</span>
+            </div>
+            <div class="hero-skill">
+              <span class="skill-icon" aria-hidden="true">⌘</span>
+              <strong>Embedded Systems</strong>
+              <span>STM32 / ESP32-C3</span>
+            </div>
+            <div class="hero-skill">
+              <span class="skill-icon code-icon" aria-hidden="true">&lt;/&gt;</span>
+              <strong>Digital Logic</strong>
+              <span>FSM / Simulation</span>
+            </div>
+            <div class="hero-skill">
+              <span class="skill-icon" aria-hidden="true">⌁</span>
+              <strong>Hardware</strong>
+              <span>UART / I²C / Debug</span>
+            </div>
+          </div>
+          <div class="hero-signoff"><span>LEARN</span><i>/</i><span>BUILD</span><i>/</i><span>GROW</span></div>
+        </div>
+
+        <div class="hero-visual" aria-label="Illustration of digital logic and embedded engineering">
+          <div class="visual-topline"><span>FIG. 01</span><span>RTL / EMBEDDED SYSTEMS</span></div>
+          <div class="circuit-board">
+            <svg class="circuit-lines" viewBox="0 0 540 430" fill="none" aria-hidden="true">
+              <path d="M22 96h89l28 28h83m43 0h44l27-27h91m-286 151h78l29-29h64m52 0h69l26 26h56M46 328h107l24-24h57m66 0h75l30 30h95M346 38v52m0 0h52l27 27v45m-320 69v-44l25-25m-92 72v-31h67m250 96v-48l28-28h70" stroke="currentColor" stroke-width="1.5" />
+              <path d="M22 96h89l28 28h83m43 0h44l27-27h91m-286 151h78l29-29h64m52 0h69l26 26h56M46 328h107l24-24h57m66 0h75l30 30h95M346 38v52m0 0h52l27 27v45m-320 69v-44l25-25m-92 72v-31h67m250 96v-48l28-28h70" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 7" opacity=".55" />
+              <circle cx="22" cy="96" r="4" fill="currentColor"/><circle cx="431" cy="112" r="4" fill="currentColor"/><circle cx="46" cy="328" r="4" fill="currentColor"/><circle cx="505" cy="334" r="4" fill="currentColor"/><circle cx="453" cy="162" r="4" fill="currentColor"/>
+            </svg>
+            <div class="chip">
+              <span class="chip-label">SYSTEM_CORE</span>
+              <div class="chip-center"><span class="chip-s">S</span><span>RTL / ARM / EMBEDDED</span></div>
+              <div class="chip-pins"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <div class="code-panel code-panel-top"><span>01 / RTL MODULE</span><code>module fifo (<br />&nbsp; clk, rst, data<br />);</code></div>
+            <div class="code-panel code-panel-bottom"><span>02 / FIRMWARE</span><code>HAL_GPIO_WritePin()<br />I2C_ReadData()</code></div>
+            <div class="wave-panel"><span>CLK</span><i></i><span>RST</span><i></i><span>DATA</span><i></i></div>
+            <div class="state-panel"><span>MOORE FSM</span><b>○ → ◉ → ○</b></div>
+            <div class="visual-coordinate">13° 02' N<br />80° 13' E</div>
+          </div>
+          <div class="visual-caption"><span>Curiosity, grounded in hardware.</span><span>CHENNAI / 2026</span></div>
+        </div>
+      </section>
+
+      <section class="intro-section section-wrap" id="about">
+        <div class="section-kicker"><span>01</span> / A LITTLE ABOUT ME</div>
+        <div class="intro-content">
+          <h2>From the first line of RTL<br />to the last wire on the board.</h2>
+          <div class="intro-details">
+            <p>
+              I’m a final-year Electronics and Communication Engineering student at Saveetha
+              School of Engineering. I enjoy making ideas tangible: describing digital systems,
+              bringing up microcontrollers, and tracking down the details that make the whole
+              thing work.
+            </p>
+            <p>
+              My projects range from a verified VHDL traffic-light controller to an ESP32-C3
+              wearable. I bring a hands-on approach, a curiosity for how things work, and
+              experience validating hardware in an R&amp;D environment.
+            </p>
+          </div>
+          <div class="skill-strip" aria-label="Core skills">
+            <span>VERILOG HDL</span><span>VHDL</span><span>MODELSIM</span>
+            <span>STM32 HAL</span><span>EMBEDDED C</span><span>I²C / UART</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="work-section section-wrap" id="work">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker"><span>02</span> / SELECTED WORK</div>
+            <h2>Built, tested, <span>learned.</span></h2>
+          </div>
+          <a class="text-link desktop-link" href="https://github.com/ssanmugappriyan/Sanmugappriyan" target="_blank" rel="noreferrer">
+            More on GitHub <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card project-featured">
+            <div class="project-art fifo-art" aria-hidden="true">
+              <div class="art-label">01 / DIGITAL DESIGN</div>
+              <div class="fifo-diagram">
+                <span class="fifo-input">DIN[7:0]</span>
+                <div class="fifo-block"><span>SYNC FIFO</span><b>16 × 8</b><i>FULL / EMPTY</i></div>
+                <span class="fifo-output">DOUT[7:0]</span>
+                <span class="fifo-arrow fifo-arrow-left">→</span>
+                <span class="fifo-arrow fifo-arrow-right">→</span>
+                <span class="fifo-counter">WR_PTR&nbsp; ↗<br />RD_PTR&nbsp; ↘</span>
+              </div>
+              <div class="art-caption">CLK <span>RESET</span> COUNT[4:0]</div>
+            </div>
+            <div class="project-info">
+              <div class="project-title-line"><h3>Synchronous FIFO</h3><span class="project-status">IN PROGRESS</span></div>
+              <p>An 8-bit, 16-entry buffer with pointer management, occupancy tracking, and full/empty flag logic.</p>
+              <div class="tag-list"><span>VERILOG</span><span>ICARUS VERILOG</span><span>GTKWAVE</span></div>
+              <a class="project-link" href="https://github.com/ssanmugappriyan/Sanmugappriyan/tree/main/Synchronous%20FIFO%20Design%20Using%20Verilog%20HDL" target="_blank" rel="noreferrer">
+                Explore project <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-art fsm-art" aria-hidden="true">
+              <div class="art-label">02 / FINITE-STATE MACHINE</div>
+              <div class="fsm-diagram">
+                <div class="fsm-node"><span>NS</span><b>RED</b></div>
+                <span class="fsm-connector">→</span>
+                <div class="fsm-node fsm-active"><span>NS</span><b>GREEN</b></div>
+                <span class="fsm-connector">→</span>
+                <div class="fsm-node"><span>NS</span><b>AMBER</b></div>
+                <div class="fsm-feedback">SELF-CHECKING TESTBENCH&nbsp; ↻</div>
+              </div>
+              <div class="art-caption">MOORE FSM <span>MODELSIM</span></div>
+            </div>
+            <div class="project-info">
+              <div class="project-title-line"><h3>Traffic Light Controller</h3><span class="project-status complete">COMPLETED</span></div>
+              <p>A Moore state machine in VHDL with a self-checking testbench for state transitions and outputs.</p>
+              <div class="tag-list"><span>VHDL</span><span>MODELSIM</span><span>VERIFICATION</span></div>
+              <a class="project-link" href="https://github.com/ssanmugappriyan/Sanmugappriyan" target="_blank" rel="noreferrer">
+                View on GitHub <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-art wearable-art" aria-hidden="true">
+              <div class="art-label">03 / EMBEDDED SYSTEMS</div>
+              <div class="wearable-diagram">
+                <div class="wearable-chip"><span>ESP32-C3</span><b>↔</b><span>MPU6050</span></div>
+                <div class="wearable-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <span class="wearable-label">FLEXION / EXTENSION MONITOR</span>
+              </div>
+              <div class="art-caption">I²C SENSOR <span>WI-FI MONITORING</span></div>
+            </div>
+            <div class="project-info">
+              <div class="project-title-line"><h3>Knee Rehab Monitor</h3><span class="project-status complete">COLLEGE PROJECT</span></div>
+              <p>A wearable device that monitors knee movement using an IMU and an ESP32-C3 wireless interface.</p>
+              <div class="tag-list"><span>EMBEDDED C</span><span>ESP32-C3</span><span>MPU6050</span></div>
+              <a class="project-link" href="https://github.com/ssanmugappriyan/Sanmugappriyan" target="_blank" rel="noreferrer">
+                View on GitHub <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        </div>
+        <a class="text-link mobile-link" href="https://github.com/ssanmugappriyan/Sanmugappriyan" target="_blank" rel="noreferrer">
+          More on GitHub <span aria-hidden="true">↗</span>
+        </a>
+      </section>
+
+      <section class="experience-section section-wrap" id="experience">
+        <div class="section-heading experience-heading">
+          <div>
+            <div class="section-kicker"><span>03</span> / WHERE I’VE LEARNED</div>
+            <h2>Hands-on from <span>day one.</span></h2>
+          </div>
+          <p class="heading-aside">Curiosity meets practical<br />engineering experience.</p>
+        </div>
+
+        <div class="experience-layout">
+          <article class="experience-card">
+            <div class="experience-date">JUN — SEP 2025</div>
+            <div class="experience-main">
+              <div class="experience-title">
+                <div><h3>Hardware R&amp;D Intern</h3><p>Qmax Test Equipments Pvt Ltd</p></div>
+                <span class="experience-index">01</span>
+              </div>
+              <ul>
+                <li>Built STM32F446 firmware for a three-tank level-monitoring prototype.</li>
+                <li>Validated hardware modules, analyzed simulation results, and debugged signal behavior.</li>
+                <li>Simplified an existing hardware module and supported board-level verification.</li>
+              </ul>
+              <div class="tag-list"><span>STM32F446</span><span>STM32 HAL</span><span>UART</span><span>HARDWARE VALIDATION</span></div>
+            </div>
+          </article>
+          <div class="education-card">
+            <div class="section-kicker"><span>04</span> / EDUCATION</div>
+            <h3>Built on a strong foundation.</h3>
+            <div class="education-entry">
+              <span class="education-date">2022 — 2026</span>
+              <h4>B.E. Electronics &amp; Communication Engineering</h4>
+              <p>Saveetha School of Engineering</p>
+              <span class="gpa">CGPA <b>8.0</b> <span>/ 10</span></span>
+            </div>
+            <div class="education-note"><span>01</span> ORCAD X CAPTURE V24.1 CERTIFIED DIGITAL BADGE</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section section-wrap" id="contact">
+        <div class="contact-orbit orbit-one"></div>
+        <div class="contact-orbit orbit-two"></div>
+        <div class="section-kicker"><span>05</span> / LET’S CONNECT</div>
+        <div class="contact-content">
+          <div>
+            <p class="contact-overline">HAVE A PROJECT OR OPPORTUNITY?</p>
+            <h2>Let’s make<br />something <span>work.</span></h2>
+          </div>
+          <div class="contact-action">
+            <p>I’m open to entry-level RTL and embedded systems opportunities. I’d love to hear what you’re building.</p>
+            <a class="button button-light" href="mailto:sanmugappriyan.ee@gmail.com">Say hello <span aria-hidden="true">↗</span></a>
+            <a class="contact-email" href="mailto:sanmugappriyan.ee@gmail.com">SANMUGAPPRIYAN.EE@GMAIL.COM</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-wrap">
+      <a class="brand footer-brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">S<span>.</span></span>
+        <span class="brand-name">SANMUGAPPRIYAN <span>S</span></span>
+      </a>
+      <span class="footer-note">DESIGNED WITH CURIOSITY <span>© 2026</span></span>
+      <div class="footer-links">
+        <a href="https://github.com/ssanmugappriyan/Sanmugappriyan" target="_blank" rel="noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9a11.2 11.2 0 0 0-3.54 21.82c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.5-1.29-1.25-1.64-1.25-1.64-1.02-.7.08-.69.08-.69 1.12.08 1.71 1.15 1.71 1.15 1 .1.81 2.63 3.49 1.87.1-.73.39-1.23.7-1.52-2.47-.28-5.06-1.24-5.06-5.52 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.08 1.14a10.7 10.7 0 0 1 5.61 0c2.14-1.45 3.07-1.14 3.07-1.14.61 1.53.23 2.67.11 2.95.72.78 1.15 1.77 1.15 2.99 0 4.29-2.6 5.23-5.08 5.51.4.35.75 1.03.75 2.08v3.08c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .9Z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/sanmugappriyan-s" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.45H4.96V9h2.97v9.45ZM6.45 7.71c-.95 0-1.72-.78-1.72-1.72a1.72 1.72 0 1 1 3.44 0c0 .94-.77 1.72-1.72 1.72Zm12 10.74h-2.96v-4.6c0-1.1-.02-2.52-1.54-2.52-1.55 0-1.78 1.2-1.78 2.44v4.68H9.2V9h2.84v1.29h.04c.39-.74 1.36-1.53 2.8-1.53 3 0 3.57 1.97 3.57 4.53v5.16Z"/></svg>
+        </a>
+        <a href="mailto:sanmugappriyan.ee@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>
